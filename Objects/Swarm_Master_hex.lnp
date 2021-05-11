@@ -1,0 +1,5 @@
+".\Objects\STARTUP.obj",
+".\Objects\Swarm_Master.obj" 
+TO ".\Objects\Swarm_Master_hex" 
+PRINT(".\Listings\Swarm_Master_hex.m51") RAMSIZE(256) 
+CODE( 0X0000-0X1FFF )

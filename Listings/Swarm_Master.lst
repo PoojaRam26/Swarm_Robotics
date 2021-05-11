@@ -1,0 +1,65 @@
+C51 COMPILER V9.60.0.0   SWARM_MASTER                                                      04/23/2021 15:32:45 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SWARM_MASTER
+OBJECT MODULE PLACED IN .\Objects\Swarm_Master.obj
+COMPILER INVOKED BY: E:\Keil\C51\BIN\C51.EXE Swarm_Master.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings
+                    -\Swarm_Master.lst) TABS(2) OBJECT(.\Objects\Swarm_Master.obj)
+
+line level    source
+
+   1          // Include header Files
+   2          #include <reg52.h>
+   3          #include <stdio.h>
+   4          
+   5          // Define Motor Conditions
+   6          
+   7          #define lt 0x06;
+   8          #define rt 0x09;
+   9          #define st 0x0a;
+  10          #define stop 0x00;
+  11          
+  12          unsigned int a;
+  13          void main()
+  14          {
+  15   1        while(1)
+  16   1        {
+  17   2          a=P1&0x03;
+  18   2          if (a==0x00)
+  19   2          {
+  20   3            P2=stop;
+  21   3            P0=stop;
+  22   3          }
+  23   2          if(a==0x01)
+  24   2          {
+  25   3            P2=lt;
+  26   3            P0=lt;
+  27   3          }
+  28   2          if(a==0x02)
+  29   2          {
+  30   3            P2=rt;
+  31   3            P0=rt;
+  32   3          }
+  33   2          if(a=0x03)
+*** WARNING C276 IN LINE 33 OF Swarm_Master.c: constant in condition expression
+  34   2          {
+  35   3            P2=st;
+  36   3            P0=st;
+  37   3          }
+  38   2          
+  39   2        }
+  40   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     59    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)
